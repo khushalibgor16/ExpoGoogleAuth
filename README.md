@@ -2,19 +2,17 @@
 
 A minimal [Expo](https://expo.dev) app demonstrating **Google Sign-In** using `expo-auth-session` and file-based routing with [Expo Router](https://docs.expo.dev/router/introduction).
 
-## Demo
+## Demo Video
 
-Screen recording (iPhone 17 Pro Max Simulator):
+The demo video is in the repo. On GitHub, the link below opens a page where the video plays.
 
-[Watch demo video](docs/demo.mov)
-
-The video is in the repo at `docs/demo.mov`. After you push to GitHub, the link above will open and play the video.
+**[Watch demo video](docs/google-auth-demo.mov)** *(iPhone 17 Pro Max Simulator)*
 
 ---
 
 ## Table of contents
 
-- [Demo](#demo)
+- [Demo Video](#demo-video)
 - [Features](#features)
 - [Project flow](#project-flow)
 - [Project structure](#project-structure)
@@ -91,7 +89,7 @@ ExpoGoogleAuth/
 ├── assets/
 │   └── images/              # App icons, splash, favicon
 ├── docs/
-│   └── demo.mov             # Screen recording demo (see Demo section)
+│   └── google-auth-demo.mov # Demo video (see Demo Video section)
 ├── .vscode/                 # Editor settings (optional)
 ├── .env                     # Google OAuth client IDs (do not commit)
 ├── .gitignore
