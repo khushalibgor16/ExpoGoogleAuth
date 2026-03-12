@@ -4,9 +4,9 @@ A minimal [Expo](https://expo.dev) app demonstrating **Google Sign-In** using `e
 
 ## Demo Video
 
-The demo video is in the repo. On GitHub, the link below opens a page where the video plays.
+Preview (plays inline on GitHub — no tap needed):
 
-**[Watch demo video](docs/google-auth-demo.mov)** *(iPhone 17 Pro Max Simulator)*
+https://github.com/khushalibgor16/ExpoGoogleAuth/raw/main/docs/ExpoAuth.mov
 
 ---
 
@@ -89,7 +89,7 @@ ExpoGoogleAuth/
 ├── assets/
 │   └── images/              # App icons, splash, favicon
 ├── docs/
-│   └── google-auth-demo.mov # Demo video (see Demo Video section)
+│   └── ExpoAuth.mov         # Demo video (inline preview in README on GitHub)
 ├── .vscode/                 # Editor settings (optional)
 ├── .env                     # Google OAuth client IDs (do not commit)
 ├── .gitignore
