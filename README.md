@@ -4,7 +4,15 @@ A minimal [Expo](https://expo.dev) app demonstrating **Google Sign-In** using `e
 
 ## Demo Video
 
-<video src="https://github.com/khushalibgor16/ExpoGoogleAuth/raw/main/docs/ExpoAuth.mov" controls width="100%" title="Expo Auth Demo"></video>
+**To make the video show here (with play/pause, no download):**
+
+1. Open this repo on **GitHub** and click the **pencil icon** to edit this README.
+2. **Drag and drop** the video into this file (you can use `docs/ExpoAuth.mov` from your repo or the file from your computer).
+3. GitHub will upload it and insert a link. That link uses `user-images.githubusercontent.com` so the video **displays as a player** in the README. Click **Commit changes**.
+
+After you do this once, the video will appear in this section for everyone—no tap, no download.
+
+*Video file in repo:* [ExpoAuth.mov](docs/ExpoAuth.mov) (click to open on GitHub until you add the embedded player above).
 
 ---
 
