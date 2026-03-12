@@ -13,7 +13,7 @@ type User = {
 type AuthContextType = {
   user: User | null;
   signIn: () => Promise<void>;
-  signOut: () => void;
+  signOut: () => Promise<void>;
   isLoading: boolean;
 };
 
@@ -27,7 +27,8 @@ export function AuthProviderWithGoogle({
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  const [request, response, promptAsync] = Google.useAuthRequest({
+  const [token, setToken] = useState<string | null>(null);
+  const [, , promptAsync] = Google.useAuthRequest({
     webClientId: process.env.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID,
     iosClientId: process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID,
     androidClientId: process.env.EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID,
@@ -38,10 +39,13 @@ export function AuthProviderWithGoogle({
       setIsLoading(true);
 
       const result = await promptAsync();
-
+      if (result?.type !== "success") {
+        console.log("Login cancelled");
+        return;
+      }
       if (result?.type === "success") {
         const token = result.authentication?.accessToken;
-
+        setToken(token ?? null);
         const res = await fetch(
           "https://www.googleapis.com/userinfo/v2/me",
           {
@@ -52,7 +56,6 @@ export function AuthProviderWithGoogle({
         );
 
         const data = await res.json();
-
         setUser({
           email: data.email,
           name: data.name,
@@ -66,8 +69,29 @@ export function AuthProviderWithGoogle({
     }
   };
 
-  const signOut = () => {
-    setUser(null);
+  const signOut = async () => {
+    try {
+      setIsLoading(true);
+  
+      if (token) {
+        await fetch(
+          `https://oauth2.googleapis.com/revoke?token=${token}`,
+          {
+            method: "POST",
+            headers: {
+              "Content-type": "application/x-www-form-urlencoded",
+            },
+          }
+        );
+      }
+  
+      setUser(null);
+      setToken(null);
+    } catch (error) {
+      console.log("Google Logout Error", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -76,6 +100,7 @@ export function AuthProviderWithGoogle({
         user,
         signIn,
         signOut,
+
         isLoading,
       }}
     >
