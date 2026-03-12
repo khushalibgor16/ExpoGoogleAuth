@@ -4,9 +4,7 @@ A minimal [Expo](https://expo.dev) app demonstrating **Google Sign-In** using `e
 
 ## Demo Video
 
-Preview (plays inline on GitHub — no tap needed):
-
-https://github.com/khushalibgor16/ExpoGoogleAuth/raw/main/docs/ExpoAuth.mov
+<video src="https://github.com/khushalibgor16/ExpoGoogleAuth/raw/main/docs/ExpoAuth.mov" controls width="100%" title="Expo Auth Demo"></video>
 
 ---
 
