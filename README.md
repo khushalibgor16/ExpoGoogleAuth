@@ -6,9 +6,9 @@ A minimal [Expo](https://expo.dev) app demonstrating **Google Sign-In** using `e
 
 Screen recording (iPhone 17 Pro Max Simulator):
 
-[Watch demo video](https://github.com/YOUR_USERNAME/YOUR_REPO/raw/main/docs/demo.mov)
+[Watch demo video](docs/demo.mov)
 
-*(After you add your video file to the repo and push, replace the URL above with your repo’s raw video URL.)*
+The video is in the repo at `docs/demo.mov`. After you push to GitHub, the link above will open and play the video.
 
 ---
 
@@ -80,18 +80,27 @@ App loads → _layout wraps app with AuthProviderWithGoogle
 ## Project structure
 
 ```
-expo-auth-example/
+ExpoGoogleAuth/
 ├── app/
 │   ├── _layout.tsx          # Root layout; wraps app with AuthProviderWithGoogle, Stack
 │   ├── index.tsx            # Redirects to /login (or home when authenticated)
 │   └── login.tsx            # Login screen with “Sign in with Google” button
 ├── src/
 │   └── auth/
-│       ├── AuthContext.tsx           # Auth context types (optional/reference)
-│       └── AuthProviderWithGoogle.tsx # Google OAuth provider + useAuth() hook
+│       └── AuthProviderWithGoogle.tsx   # Google OAuth provider + useAuth() hook
+├── assets/
+│   └── images/              # App icons, splash, favicon
+├── docs/
+│   └── demo.mov             # Screen recording demo (see Demo section)
+├── .vscode/                 # Editor settings (optional)
 ├── .env                     # Google OAuth client IDs (do not commit)
+├── .gitignore
 ├── app.json                 # Scheme, bundle ID, package name for OAuth redirect
-└── package.json
+├── eslint.config.js
+├── package.json
+├── package-lock.json
+├── tsconfig.json
+└── README.md
 ```
 
 ---
